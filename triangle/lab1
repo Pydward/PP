@@ -1,0 +1,49 @@
+///Pawcio LAB 6 Informatyka nstac.///
+///program czy trojkat? - lab 1///
+
+#include <iostream>
+
+using namespace std;
+
+int a,b,c;
+
+int main()
+{
+	cout<<"Program czy trojkat"<<endl;
+	cout<<"Wprowadz dlugosc odcinkow i oddziel je enterem: "<<endl;
+	cin>>a;
+	cin>>b;
+	cin>>c;
+  ///sortowanie wartosci od najmniejszej do najwiekszej
+	float temp; ///pomocnicza zmienna zeby zamienic wartosci
+	if (a>b) ///przyjmiemy ze a=3. b=2
+	{
+			temp = a; ///a ma wartosc 3 no i temp teraz tez
+			a = b;		///teraz a przyjmuje wartosc 2
+			b = temp;  ///no i b ma wartosc 3 bo wczesniej temp mialo 3
+	}		///finalnie a=2 b=3	
+	if (a>c) ///a=4 c=3
+	{
+    temp = a;  /// temp przyjmuje 4
+		a = c;     /// a przyjmuje 3
+		c = temp;  /// c przyjmuje 4
+  }		///finalnie a=3 c=4
+  if (b>c) ///b=4 c=3
+  {
+    	temp = b; ///temp = 4
+    	b = c; /// b = 3
+    	c = temp; /// c = 4
+	}
+  cout<<"Wprowadzne liczby posortowane od najmniejszej do najwiekszej: "<<endl;
+  cout<<a<<endl;
+  cout<<b<<endl;
+  cout<<c<<endl;
+  cout<<"Czy mozemy zbudowac z tego trojkat?"<<endl;
+  ///matematyczny warunek do trojkata a+b>c
+  if(a+b>c && a+c>b && b+c>a)
+  {
+    cout<<"tak, mozemy zbudowac trojkat o bokach: "<<a<<" "<<b<<" "<<c;
+	}
+	else cout<<"no nie da rady.";
+	return 0;
+}
