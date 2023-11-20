@@ -1,0 +1,137 @@
+///Pawcio LAB 6 Informatyka nstac.///
+///program kalkulator bryl - lab 2///
+#include <iostream>
+#include <math.h>
+#include <cmath>
+ 
+using namespace std;
+ 
+double pi=3.14;
+double V, pcc;
+double r;
+double h, l;
+ 
+char odp;
+ 
+ 
+int main()
+{
+for(;;)
+{
+start:
+ 
+cout<<"Kalkulator objetosci i pola powierzchni bryl w ramach lab. nr 2 z podstaw programowania "<<endl;
+cout<<"Witam w glownym menu"<<endl;
+cout<<"Chcesz obliczyc pole powierzchni calkowietej czy obejtosc?"<<endl;
+cout<<"1. Objetosc"<<endl<<"2. Pcc"<<endl<< "3. Zakonczy dzialanie programu."<<endl;
+ 
+int wybor;
+cin>>wybor;
+switch(wybor)
+{
+case 1:
+	cout<<"Wprowadz numer przy figurze, ktorej objetosc chcesz obliczyc: "<<endl;
+	cout<<"1. Kula"<<endl;
+	cout<<"2. Stozek"<<endl;
+	cout<<"3. Walec"<<endl;
+	int ktore;
+	cin>>ktore;
+	system("cls");
+	switch(ktore)
+	{
+	case 1: 
+		cout<<"Wprowadz dlugosc promienia kuli: "<<endl;
+		cin>>r;
+		V = (4*pi*pow(r, 3))/3;
+		cout<<"Objetosc figury dla wprowadzonych danych wynosi: "<<V<<endl;
+		
+		cout<<"czy chcesz dalej liczyc? T/N"<<endl;
+		cin>>odp;
+		system("cls");
+		if (odp == 'T' || odp == 't') goto start;
+		else return 0;
+	case 2:
+		cout<<"Wprowadz dlugosc promienia podstawy: "<<endl;
+		cin>>r;
+		cout<<"Wprowadz wysokosc stozka: "<<endl;
+		cin>>h;
+		V = (pi*pow(r, 2)*h)/3;
+		cout<<"Objetosc figury dla wprowadzonych danych wynosi: "<<V<<endl;	
+		
+		cout<<"czy chcesz dalej liczyc? T/N"<<endl;
+		cin>>odp;
+		system("cls");
+		if (odp == 'T' || odp == 't') goto start;
+		else return 0;
+	case 3:
+		cout<<"Wprowadz dlugosc promienia walca: "<<endl;
+		cin>>r;
+		cout<<"Wprowadz wysokosc walca: "<<endl;
+		cin>>h;
+		V = pi*pow(r, 2)*h;
+		cout<<"Objetosc figury dla wprowadzonych danych wynosi: "<<V<<endl;
+ 
+		cout<<"czy chcesz dalej liczyc? T/N"<<endl;
+		cin>>odp;
+		system("cls");
+		if (odp == 'T' || odp == 't') goto start;
+		else return 0;
+	}
+case 2:
+	cout<<"Wprowadz numer przy figurze, ktorej pole powierzchni calkowitej chcesz obliczyc: "<<endl;
+	cout<<"1. Kula"<<endl;
+	cout<<"2. Stozek"<<endl;
+	cout<<"3. Walec"<<endl;
+	cin>>ktore;
+	system("cls");
+	switch(ktore)
+	{
+		case 1:
+		cout<<"Wprowadz dlugosc promienia kuli: "<<endl;
+		cin>>r;
+		pcc = 4*pi*pow(r,2);
+		cout<<"Pcc figury dla wprowadzonych danych wynosi: "<<pcc<<endl;
+ 
+		cout<<"czy chcesz dalej liczyc? T/N"<<endl;
+		cin>>odp;
+		system("cls");
+		if (odp == 'T' || odp == 't') goto start;
+		else return 0;
+	case 2:
+		cout<<"Wprowadz dlugosc promienia podstawy: "<<endl;
+		cin>>r;
+		cout<<"Wprowadz dlugosc krawedzi podstawy: "<<endl;
+		cin>>l;
+		cout<<"Wprowadz wysokosc stozka: "<<endl;
+		cin>>h;
+		pcc = pi*pow(r,2)+pi*r*l;
+		cout<<"Pcc figury dla wprowadzonych danych wynosi: "<<pcc<<endl;
+ 
+		cout<<"czy chcesz dalej liczyc? T/N"<<endl;
+		cin>>odp;
+		system("cls");
+		if (odp == 'T' || odp == 't') goto start;
+		else return 0;
+	case 3:
+		cout<<"Wprowadz dlugosc promienia walca: "<<endl;
+		cin>>r;
+		cout<<"Wprowadz wysokosc walca: "<<endl;
+		cin>>h;
+		pcc = 2*pi*r*(r+h);
+		cout<<"Pcc figury dla wprowadzonych danych wynosi: "<<pcc<<endl;
+ 
+		cout<<"czy chcesz dalej liczyc? T/N"<<endl;
+		cin>>odp;
+		system("cls");
+		if (odp == 'T' || odp == 't') goto start;
+		else return 0;
+	} 
+case 3:
+	return 0;
+default:
+	system("cls");
+	cout<<"nie ma takiego wyboru."<<endl;
+}
+}
+return 0;
+}
